@@ -8,12 +8,30 @@ header {
   height: 10vw;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .card {
   background-color: beige;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 40%;
   border-radius: 5px;
+  padding: 1vw;
+  margin: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40vh;
 }
 
 .card:hover {

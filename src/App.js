@@ -11,11 +11,15 @@ function App() {
         <h1>My Recipes Page</h1>
       </header>
       <div className="main-content">
-        <div className="card">
-          <h3>{recipesDatabase[0].food}</h3>
-          <img src={recipesDatabase[0].image} width="150px" alt="food-pic" />
-          <p>{recipesDatabase[0].instructions}</p>
-        </div>
+        {recipesDatabase.map(recipe => {
+          return (
+            <div className="card">
+              <h3>{recipe.food}</h3>
+              <img src={recipe.image} width="150px" alt="food-pic" />
+              <p>{recipe.instructions}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
