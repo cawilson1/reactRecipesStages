@@ -6,6 +6,8 @@ header {
   background-color: brown;
   display: flex;
   height: 10vw;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .App {

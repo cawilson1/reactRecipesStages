@@ -3,6 +3,7 @@ import "./App.css";
 import recipesDatabase from "./recipesDatabase";
 import RecipeCard from "./components/RecipeCard";
 import RecipeDetails from "./components/RecipeDetails";
+import NavBar from "./components/Navbar";
 import { not } from "ramda";
 
 function App() {
@@ -18,18 +19,19 @@ function App() {
   console.log(currentRecipe);
   if (not(isHomePage)) {
     return (
-      <RecipeDetails
-        setIsHomePage={setIsHomePage}
-        recipe={currentRecipe}
-      ></RecipeDetails>
+      <div>
+        <NavBar />
+        <RecipeDetails
+          setIsHomePage={setIsHomePage}
+          recipe={currentRecipe}
+        ></RecipeDetails>
+      </div>
     );
   }
 
   return (
     <div className="App">
-      <header>
-        <h1>My Recipes Page</h1>
-      </header>
+      <NavBar />
       <div className="main-content">
         {recipesDatabase.map(recipe => (
           <RecipeCard
