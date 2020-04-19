@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import recipesDatabase from "./recipesDatabase";
+import RecipeCard from "./components/RecipeCard";
 
 function App() {
   console.log(recipesDatabase);
@@ -11,15 +12,9 @@ function App() {
         <h1>My Recipes Page</h1>
       </header>
       <div className="main-content">
-        {recipesDatabase.map(recipe => {
-          return (
-            <div className="card">
-              <h3>{recipe.food}</h3>
-              <img src={recipe.image} width="150px" alt="food-pic" />
-              <p>{recipe.instructions}</p>
-            </div>
-          );
-        })}
+        {recipesDatabase.map(recipe => (
+          <RecipeCard recipe={recipe}></RecipeCard>
+        ))}
       </div>
     </div>
   );
