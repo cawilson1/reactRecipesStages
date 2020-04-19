@@ -6,7 +6,7 @@ import RecipeDetails from "./components/RecipeDetails";
 import { not } from "ramda";
 
 function App() {
-  const [currentRecipe, setCurrentRecipe] = useState("");
+  const [currentRecipe, setCurrentRecipe] = useState({});
   const [isHomePage, setIsHomePage] = useState(true);
 
   function updateRecipe(deets) {
@@ -17,7 +17,12 @@ function App() {
   console.log(isHomePage);
   console.log(currentRecipe);
   if (not(isHomePage)) {
-    return <RecipeDetails setIsHomePage={setIsHomePage}></RecipeDetails>;
+    return (
+      <RecipeDetails
+        setIsHomePage={setIsHomePage}
+        recipe={currentRecipe}
+      ></RecipeDetails>
+    );
   }
 
   return (
