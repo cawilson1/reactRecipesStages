@@ -1,24 +1,22 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import recipesDatabase from "./recipesDatabase";
 
 function App() {
+  console.log(recipesDatabase);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React, if you want to
-        </a>
+      <header>
+        <h1>My Recipes Page</h1>
       </header>
+      <div className="main-content">
+        <div className="card">
+          <h3>{recipesDatabase[0].food}</h3>
+          <img src={recipesDatabase[0].image} width="150px" alt="food-pic" />
+          <p>{recipesDatabase[0].instructions}</p>
+        </div>
+      </div>
     </div>
   );
 }
