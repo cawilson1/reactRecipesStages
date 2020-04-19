@@ -10,12 +10,6 @@ header {
   align-items: center;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 .main-content {
   display: flex;
   align-items: center;
